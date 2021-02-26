@@ -2,8 +2,9 @@ function encrypt (text: string) {
     cmsg = ""
     for (let index = 0; index <= text.length - 1; index++) {
         chr = text.charAt(index)
-        cmsg = 0
+        cmsg = "" + cmsg + (" " + morse[alphabet.indexOf(chr)])
     }
+    return cmsg
 }
 function playCode (text: string) {
     for (let index = 0; index <= text.length; index++) {
@@ -18,14 +19,19 @@ function playCode (text: string) {
     }
 }
 input.onButtonPressed(Button.B, function () {
-	
+    encrypt(msg)
+    basic.showString(cmsg)
+    playCode(cmsg)
 })
 let chr = ""
 let cmsg = ""
+let alphabet: string[] = []
+let morse: string[] = []
+let msg = ""
 let j316 = "for god so loved the world"
-let msg = j316
+msg = j316
 let Word = ""
 let Cword = ""
 let code = ""
-let morse = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----"]
-let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+morse = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----"]
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
