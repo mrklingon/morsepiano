@@ -2,7 +2,9 @@ function encrypt (text: string) {
     cmsg = ""
     for (let index = 0; index <= text.length - 1; index++) {
         chr = text.charAt(index)
-        cmsg = "" + cmsg + (" " + morse[alphabet.indexOf(chr)])
+        if (chr != "") {
+            cmsg = "" + cmsg + (" " + morse[alphabet.indexOf(chr)])
+        }
     }
     return cmsg
 }
