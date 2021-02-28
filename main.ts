@@ -50,27 +50,6 @@ let Verses: string[] = []
 let DASH: Image = null
 let DOT: Image = null
 let BLANK: Image = null
-images.createBigImage(`
-    . . . . . . . . . .
-    . . . . . . . . . .
-    # # . # # . # # . #
-    . . . . . . . . . .
-    . . . . . . . . . .
-    `).scrollImage(1, 200)
-images.createBigImage(`
-    . . . . . . . . . .
-    . . . . . . . . . .
-    # . # # . # . # # .
-    . . . . . . . . . .
-    . . . . . . . . . .
-    `).scrollImage(1, 200)
-images.createBigImage(`
-    . . . . . . . . . .
-    . . . . . . . . . .
-    # . . # . # . # . #
-    . . . . . . . . . .
-    . . . . . . . . . .
-    `).scrollImage(1, 200)
 basic.showLeds(`
     . . . . .
     . . . . .
@@ -112,3 +91,4 @@ alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"
 let Word = ""
 let Cword = ""
 let code = ""
+playCode(encrypt("morse"))
