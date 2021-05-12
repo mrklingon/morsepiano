@@ -28,9 +28,6 @@ input.onButtonPressed(Button.A, function () {
     VInit.push(Minit)
     basic.showString("" + (Minit))
 })
-input.onPinPressed(TouchPin.P2, function () {
-    music.setBuiltInSpeakerEnabled(true)
-})
 input.onButtonPressed(Button.AB, function () {
     encrypt(msg)
     playCode(cmsg)
@@ -39,11 +36,17 @@ input.onButtonPressed(Button.B, function () {
     encrypt(msg)
     basic.showString("" + (cmsg))
 })
-input.onPinPressed(TouchPin.P1, function () {
-    music.setBuiltInSpeakerEnabled(false)
-})
 input.onGesture(Gesture.Shake, function () {
     basic.showString("" + (msg))
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    Mic += 1
+    if (Mic > 1) {
+        Mic = 0
+        music.setBuiltInSpeakerEnabled(false)
+    } else {
+        music.setBuiltInSpeakerEnabled(true)
+    }
 })
 let Minit = ""
 let chr = ""
@@ -56,6 +59,7 @@ let Verses: string[] = []
 let DASH: Image = null
 let DOT: Image = null
 let BLANK: Image = null
+let Mic = 0
 basic.showLeds(`
     . . . . .
     . . . . .
@@ -63,6 +67,7 @@ basic.showLeds(`
     . . . . .
     . . . . .
     `)
+Mic = 1
 BLANK = images.createImage(`
     . . . . .
     . . . . .
