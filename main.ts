@@ -28,6 +28,9 @@ input.onButtonPressed(Button.A, function () {
     VInit.push(Minit)
     basic.showString("" + (Minit))
 })
+input.onPinPressed(TouchPin.P2, function () {
+    music.setBuiltInSpeakerEnabled(true)
+})
 input.onButtonPressed(Button.AB, function () {
     encrypt(msg)
     playCode(cmsg)
@@ -35,6 +38,9 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     encrypt(msg)
     basic.showString("" + (cmsg))
+})
+input.onPinPressed(TouchPin.P1, function () {
+    music.setBuiltInSpeakerEnabled(false)
 })
 input.onGesture(Gesture.Shake, function () {
     basic.showString("" + (msg))
